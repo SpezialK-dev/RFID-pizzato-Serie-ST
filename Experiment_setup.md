@@ -15,3 +15,5 @@ laut marketing Material sehen die Männlich aus, deswegen habe ich die weibliche
 Die sensoren werden nur über Strom versorgt werden mit einem Desktop powersupply. Dabei sollten diese 24 V bekommen über pin 1 und 3. 
 
 Die zustände können über die LED's, welche am Gerät befässtigt sind abgelesen werden. Eventuell werden auch die Meldezugänge betrachtet werden. y
+
+
