@@ -17,3 +17,7 @@ Die sensoren werden nur über Strom versorgt werden mit einem Desktop powersuppl
 Die zustände können über die LED's, welche am Gerät befässtigt sind abgelesen werden. Eventuell werden auch die Meldezugänge betrachtet werden. y
 
 
+# Actual setup
+
+8 pin female connect used to connect to lab bench power supply 
+

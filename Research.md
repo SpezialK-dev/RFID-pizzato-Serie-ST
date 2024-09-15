@@ -1,10 +1,12 @@
 # General Information about the Tag
+SR DD420MK-D1T
 
 Pin 1 and 3 are the power pins as specified by the manual. 
 -> takes 24 V constantly 
 -> around 12mA when ideling and no tag in range 
 -> around 15~16mA when ideling and tag in range
 
+-> It can ONLY hold a single tag as valid -> no multi tag support in our Version 
 It appears to use the EM4100 Tags for identification. 
 
 A2 is ground(sort of)
@@ -36,7 +38,7 @@ Since that was so easy and could not really be called research I looked into som
 
 - the pins on the back 
 - maybe power analyis ? 
-- generating abitrary keys with the flipper
+- generating abitrary keys with the flipper -> doable using the then write pin
 - extending range of original tag?
   -> replay attacks
 
@@ -64,3 +66,14 @@ A [Forum post ](https://electronics.stackexchange.com/questions/99135/what-can-i
 A [research paper ](https://www.sciencedirect.com/science/article/abs/pii/S0167923619302234) into that topic, that could be of interest.
 
 
+# generating abitrary tags with the flipper
+
+
+After simply copying the tag we are able to modify the hex value of the tag.
+
+In the following images you show you the two modified tags
+![modified tages](./images/modified_pizzato_Tag_information_flipper.png)
+
+![original tag](./images/original_pizzato_Tag_information_flipper.png)
+
+these can be saved to the device, 
