@@ -24,6 +24,41 @@ and LED lighting up green when the correct tag is held infront of it.
 
 # Copying and emulating the Tag
 
+## Output from the Proxmark 3
+
+The following thing also backs the flipper results
+```
++] EM 410x ID A02A060F59
+[+] EM410x ( RF/64 )
+[=] -------- Possible de-scramble patterns ---------
+[+] Unique TAG ID      : 055460F09A
+[=] HoneyWell IdentKey
+[+]     DEZ 8          : 00397145
+[+]     DEZ 10         : 0705040217
+[+]     DEZ 5.5        : 10758.03929
+[+]     DEZ 3.5A       : 160.03929
+[+]     DEZ 3.5B       : 042.03929
+[+]     DEZ 3.5C       : 006.03929
+[+]     DEZ 14/IK2     : 00687899807577
+[+]     DEZ 15/IK3     : 000022890475674
+[+]     DEZ 20/ZK      : 00050504060015000910
+[=] 
+[+] Other              : 03929_006_00397145
+[+] Pattern Paxton     : 2686078297 [0xA01A4D59]
+[+] Pattern 1          : 591822 [0x907CE]
+[+] Pattern Sebury     : 3929 6 397145  [0xF59 0x6 0x60F59]
+[+] VD / ID            : 160 / 0705040217
+[+] Pattern ELECTRA    : 41002 397145
+[=] ------------------------------------------------
+
+[+] Valid EM410x ID found!
+```
+
+
+
+## Flipper
+
+
 I was hopting that this would be more difficult, it wasnt. The flipper can just read + emulate the Tags. 
 They are EM - Micro EM4100 Tags-> atleast from what the flipper is saying. Industrial standart ones,
 -> The flipper zero also already has the possibility for doing a bit of fuzzing for this standart
@@ -70,10 +105,17 @@ A [research paper ](https://www.sciencedirect.com/science/article/abs/pii/S01679
 
 
 After simply copying the tag we are able to modify the hex value of the tag.
-
++
 In the following images you show you the two modified tags
 ![modified tages](./images/modified_pizzato_Tag_information_flipper.png)
 
 ![original tag](./images/original_pizzato_Tag_information_flipper.png)
 
 these can be saved to the device, 
+
+# Sniffing with SDR
+
+
+[Replay ](https://www.blackhillsinfosec.com/how-to-replay-rf-signals-using-sdr/)
+
+This didnt turn out as planned and did not work with my cheap RTL-SDR. I didnt manage to detect anything my thing might have not been sensitiv enough
