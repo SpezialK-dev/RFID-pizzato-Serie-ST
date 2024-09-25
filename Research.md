@@ -24,6 +24,8 @@ and LED lighting up green when the correct tag is held infront of it.
 
 # Copying and emulating the Tag
 
+The tag DOES NOT Contain any other Data other than an ID which in my case is `A02A060F59`
+
 ## Output from the Proxmark 3
 
 The following thing also backs the flipper results
@@ -77,6 +79,46 @@ Since that was so easy and could not really be called research I looked into som
 - extending range of original tag?
   -> replay attacks
 
+
+Since there is not a lot of time left and the abouve would likely take quite a bit of time and new expertiese There are a few things that I want to try instead 
+
+- [ ] creating a tag with to much and too little information
+- [ ] creating a tag with a wrong format ( but still and EM tag) same and different ID 
+- [ ] trying to write a new tag to the tag included with the device
+
+  
+# Actually testing some things 
+
+##  creating a tag with to much and too little information
+
+### What I want to see 
+
+optimally this does not respond to any of these tags and does not register them in a way 
+
+### Trying these things
+we will use the 
+```proxmark 
+lf em 410x sim --id <id-data in hex>
+
+```
+
+command for the too short one, since I have not found a better id maybe I could also try to to give it a longer one and see what it does with that 
+
+The following commands are the ones that I am trying 
+```proxmark 
+
+```
+
+#### trying a mirrord tag with short delay between 
+
+since we can set the gap to 0, it would be interesting if we used a tag that was mirrord in the middel and only gave it half of the tag as input data to emulte but due to it being mirror it would and the low dealy it would be recognized as one tag. The Original programming will be done with the flipper. 
+
+## creating a tag with a wrong format ( but still and EM tag) same and different ID
+
+## trying to write a new tag to the tag included with the device
+
+
+
 # How Keys are generated 
 
 A further deep dive into EM100. 
@@ -91,9 +133,68 @@ A further deep dive into EM100.
 - Biphase code 
 - PSK
 
-Currently it is unknown what encoding is used here.
 
-# Replay Attacks 
+Proxmark recongineses patterns with Manchester decoding-> so most likely it uses the manchester Encoding 
+
+
+the raw data
+```
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111100011111111000100011
+[+] 11111010111111011101000000100101
+[+] 10011111111
+```
+
+the modified buffer after running 
+
+
+```proxmark
+pm3 --> data rawdemod --am
+```
+
+```
+[+] DemodBuffer:
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111101000000000101101000
+[+] 00000110000000111100101010010011
+[+] 10111111111
+```
+
+
+
+## Replay Attacks 
 originl messurable distance before light starts to blink orange/green 11.77mm this messurement ist perfekt but should give a baseline.
 
 A [Forum post ](https://electronics.stackexchange.com/questions/99135/what-can-i-do-to-increase-passive-hf-rfid-read-range) about a similar topic. That could help me find things that could work to extend its range.
@@ -101,7 +202,7 @@ A [Forum post ](https://electronics.stackexchange.com/questions/99135/what-can-i
 A [research paper ](https://www.sciencedirect.com/science/article/abs/pii/S0167923619302234) into that topic, that could be of interest.
 
 
-# generating abitrary tags with the flipper
+## generating abitrary tags with the flipper
 
 
 After simply copying the tag we are able to modify the hex value of the tag.
@@ -113,9 +214,17 @@ In the following images you show you the two modified tags
 
 these can be saved to the device, 
 
-# Sniffing with SDR
+
+[Proxmark forum](http://proxmark.org/forum/viewtopic.php?id=4400) 
+## Sniffing with SDR
 
 
 [Replay ](https://www.blackhillsinfosec.com/how-to-replay-rf-signals-using-sdr/)
 
 This didnt turn out as planned and did not work with my cheap RTL-SDR. I didnt manage to detect anything my thing might have not been sensitiv enough
+
+
+# Attacking this thing with a laser 
+
+
+I think you could theoretically trigger an "open state" when shooting a laser at the LED that indicates if the thing has deteced a tag or not. 
