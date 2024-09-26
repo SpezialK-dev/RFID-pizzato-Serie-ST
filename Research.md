@@ -113,10 +113,26 @@ The following commands are the ones that I am trying
 
 since we can set the gap to 0, it would be interesting if we used a tag that was mirrord in the middel and only gave it half of the tag as input data to emulte but due to it being mirror it would and the low dealy it would be recognized as one tag. The Original programming will be done with the flipper. 
 
+
+The Tag in that I will use is the flipper
+![../images/]
+
+
+```proxmark 
+lf em 410x sim --id A02A0A02A0 --gap 0
+```
+the gap 0 was required so it appears to read it as a stream? Maybe since the proxmark does not support smaller tags I could not test what I originally wanted to try. 
+
+It does use the 64 clock. A 32 one wont work. 
+
+This is new information to me 
+
+
 ## creating a tag with a wrong format ( but still and EM tag) same and different ID
 
 ## trying to write a new tag to the tag included with the device
 
+It just breaks the Tag. The tag will not be able to be read afterwards. 
 
 
 # How Keys are generated 
