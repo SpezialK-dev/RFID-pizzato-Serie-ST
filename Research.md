@@ -130,7 +130,8 @@ This is new information to me
 
 ## creating a tag with a wrong format ( but still and EM tag) same and different ID
 
-does not seem feesable 
+does not seem feesable, I mean it is possible, since a 7755 Tag. This would be abel to act asn a EM4100 Tag. those cannot be emulated with the proxmark nor the flipper. 
+Maybe in the future. I have not found something atleast from the docu that would be compatible with this tag. 
 
 ## trying to write a new tag to the tag included with the device
 
