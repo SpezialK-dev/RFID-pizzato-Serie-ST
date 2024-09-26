@@ -134,6 +134,13 @@ This is new information to me
 
 It just breaks the Tag. The tag will not be able to be read afterwards. 
 
+They are genuine EM410x tags since those are read only which is true for my tag and its not a t5577 tag which can be rewriten. 
+Some information seems to be overwriten since they are not recgnozed by any reader afterwards neither the original reader nor the proxmark 3 nor the flipper. 
+This means this is a DOS condition that can easily be triggered to great effekt. To me there are no knowen ways of solving this. 
+
+
+[source for knowing that its read only](https://old.reddit.com/r/proxmark3/comments/vs9yd9/possible_to_clone_t55xx_to_em410x/)
+
 
 # How Keys are generated 
 
