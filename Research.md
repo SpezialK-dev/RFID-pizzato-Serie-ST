@@ -130,6 +130,8 @@ This is new information to me
 
 ## creating a tag with a wrong format ( but still and EM tag) same and different ID
 
+does not seem feesable 
+
 ## trying to write a new tag to the tag included with the device
 
 It just breaks the Tag. The tag will not be able to be read afterwards. 
