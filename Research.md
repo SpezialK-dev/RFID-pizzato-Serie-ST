@@ -84,7 +84,7 @@ Since there is not a lot of time left and the abouve would likely take quite a b
 
 - [ ] creating a tag with to much and too little information
 - [ ] creating a tag with a wrong format ( but still and EM tag) same and different ID 
-- [ ] trying to write a new tag to the tag included with the device
+- [X] trying to write a new tag to the tag included with the device
 
   
 # Actually testing some things 
@@ -138,7 +138,9 @@ It just breaks the Tag. The tag will not be able to be read afterwards.
 
 They are genuine EM410x tags since those are read only which is true for my tag and its not a t5577 tag which can be rewriten. 
 Some information seems to be overwriten since they are not recgnozed by any reader afterwards neither the original reader nor the proxmark 3 nor the flipper. 
-This means this is a DOS condition that can easily be triggered to great effekt. To me there are no knowen ways of solving this. 
+
+
+From what I found the way that EM4100 tags are created is that efuses are created and trying to write to them seems to blow them. 
 
 
 [source for knowing that its read only](https://old.reddit.com/r/proxmark3/comments/vs9yd9/possible_to_clone_t55xx_to_em410x/)
