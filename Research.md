@@ -1,3 +1,9 @@
+# TODO 
+
+- [ ] Find the norm relevant for this device
+- [ ] find an attack that it is not norm conform anymore 
+
+
 # General Information about the Tag
 SR DD420MK-D1T
 
@@ -67,7 +73,7 @@ They are EM - Micro EM4100 Tags-> atleast from what the flipper is saying. Indus
 
 [Datasheet for EM200](https://www.emmicroelectronic.com/sites/default/files/products/datasheets/em4200_ds.pdf)
 [Datasheet for EM100](https://www.alldatasheet.com/html-pdf/154654/EMMICRO/EM4100/293/1/EM4100.html)
-
+[Another Datasheet for EM4100](https://download.mikroe.com/documents/accessories/rfid/125khz/rfid-card-125khz-em4100-datasheet.pdf)
 
 Since that was so easy and could not really be called research I looked into some other ways to missuse this thing. 
 
